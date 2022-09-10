@@ -54,6 +54,7 @@ export const login = (email, password) => async (dispatch) => {
 export const getAllUser = () => async (dispatch, getState) => {
   try {
     // console.log(email, password);
+
     dispatch({
       type: GET_ALL_USER_REQUEST,
     });
@@ -61,6 +62,7 @@ export const getAllUser = () => async (dispatch, getState) => {
     const {
       userLogin: { userInfo },
     } = getState();
+    console.log(userInfo.token);
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -68,10 +70,7 @@ export const getAllUser = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(
-      "http://localhost:4000/api/user/",
-      config
-    );
+    const { data } = await axios.get("http://localhost:4000/api/user", config);
 
     dispatch({
       type: GET_ALL_USER_SUCCESS,
@@ -106,8 +105,8 @@ export const getAllUploader = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(
-      "http://localhost:4000/api/user/uploaders",
+    const { data } = await axios.get(
+      "http://localhost:4000/api/user/uploader",
       config
     );
 
@@ -145,7 +144,7 @@ export const getAllStudent = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data } = await axios.get(
       "http://localhost:4000/api/user/students",
       config
     );

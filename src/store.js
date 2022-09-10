@@ -3,12 +3,18 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { userLoginReducer } from "Reducer/userReducer";
 import { eventDetailsReducer } from "Reducer/eventReducer";
-import { usersAvailableReducer } from "Reducer/userReducer";
+import {
+  getAllStudentReducer,
+  getAllUserReducer,
+  getAllUploaderReducer,
+} from "Reducer/userReducer";
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   eventDetails: eventDetailsReducer,
-  usersAvailable: usersAvailableReducer,
+  allUser: getAllStudentReducer,
+  allStudent: getAllUserReducer,
+  allUploader: getAllUploaderReducer,
 });
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
@@ -29,11 +35,9 @@ const allStudentFromStorage = localStorage.getItem("allStudent")
 const initialState = {
   userLogin: { userInfo: userInfoFromStorage },
   eventDetails: { eventInfo: userEventFromStorage },
-  usersAvailable: {
-    allUser: allUserFromStorage,
-    allStudent: allStudentFromStorage,
-    allUploader: allUploaderFromStorage,
-  },
+  allUser: allUserFromStorage,
+  allStudent: allStudentFromStorage,
+  allUploader: allUploaderFromStorage,
 };
 const middleware = [thunk];
 

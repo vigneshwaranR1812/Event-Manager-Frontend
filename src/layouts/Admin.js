@@ -14,7 +14,9 @@ import Dashboard from "views/admin/Dashboard.js";
 import Maps from "views/admin/Maps.js";
 import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
-
+import AddUser from "views/admin/AddUser";
+import AddEvent from "views/admin/AddEvents";
+import Events from "views/admin/Events";
 export default function Admin() {
   return (
     <>
@@ -27,7 +29,9 @@ export default function Admin() {
           <Switch>
             <Route path="/admin/dashboard" exact component={Dashboard} />
             <Route path="/admin/maps" exact component={Maps} />
-            <Route path="/admin/settings" exact component={Settings} />
+            <Route path="/admin/addUsers" exact component={AddUser} />
+            <Route path="/admin/addEvents" exact component={AddEvent} />
+            <Route path="/admin/events" exact component={Events} />
             <Route path="/admin/tables" exact component={Tables} />
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>

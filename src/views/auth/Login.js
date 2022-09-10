@@ -1,4 +1,9 @@
-import { login } from "../../Action/userAction";
+import {
+  getAllStudent,
+  getAllUploader,
+  getAllUser,
+  login,
+} from "../../Action/userAction";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
@@ -16,9 +21,14 @@ export default function Login() {
   useEffect(() => {
     if (userInfo) {
       dispatch(getAllEvents());
+      if (userInfo.type === "Admin") {
+        dispatch(getAllUser());
+        dispatch(getAllStudent());
+        dispatch(getAllUploader());
+      }
       history.push("/profile");
     }
-  }, [history, userInfo]);
+  }, [history, userInfo, dispatch]);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);

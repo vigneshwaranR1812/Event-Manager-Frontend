@@ -111,16 +111,16 @@ export default function Sidebar() {
                   <Link
                     className={
                       "text-xs uppercase py-3 font-bold block " +
-                      (window.location.href.indexOf("/admin/settings") !== -1
+                      (window.location.href.indexOf("/admin/events") !== -1
                         ? "text-lightBlue-500 hover:text-lightBlue-600"
                         : "text-blueGray-700 hover:text-blueGray-500")
                     }
-                    to="/admin/settings"
+                    to="/admin/events"
                   >
-                    <i
+                    <i 
                       className={
                         "fas fa-tools mr-2 text-sm " +
-                        (window.location.href.indexOf("/admin/settings") !== -1
+                        (window.location.href.indexOf("/admin/events") !== -1
                           ? "opacity-75"
                           : "text-blueGray-300")
                       }
@@ -155,21 +155,42 @@ export default function Sidebar() {
                   <Link
                     className={
                       "text-xs uppercase py-3 font-bold block " +
-                      (window.location.href.indexOf("/admin/maps") !== -1
+                      (window.location.href.indexOf("/admin/addEvents") !== -1
                         ? "text-lightBlue-500 hover:text-lightBlue-600"
                         : "text-blueGray-700 hover:text-blueGray-500")
                     }
-                    to="/admin/maps"
+                    to="/admin/addEvents"
                   >
                     <i
                       className={
                         "fas fa-map-marked mr-2 text-sm " +
-                        (window.location.href.indexOf("/admin/maps") !== -1
+                        (window.location.href.indexOf("/admin/addEvents") !== -1
                           ? "opacity-75"
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    All Events
+                    Add Events
+                  </Link>
+                </li>
+                <li className="items-center">
+                  <Link
+                    className={
+                      "text-xs uppercase py-3 font-bold block " +
+                      (window.location.href.indexOf("/admin/addUsers") !== -1
+                        ? "text-lightBlue-500 hover:text-lightBlue-600"
+                        : "text-blueGray-700 hover:text-blueGray-500")
+                    }
+                    to="/admin/addUsers"
+                  >
+                    <i
+                      className={
+                        "fas fa-map-marked mr-2 text-sm " +
+                        (window.location.href.indexOf("/admin/addUsers") !== -1
+                          ? "opacity-75"
+                          : "text-blueGray-300")
+                      }
+                    ></i>{" "}
+                    Add Users
                   </Link>
                 </li>
               </ul>

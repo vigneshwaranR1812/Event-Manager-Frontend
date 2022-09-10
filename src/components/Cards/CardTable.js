@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
 
-export default function CardTable({ color }) {
+export default function CardTable({ color, whom }) {
   return (
     <>
       <div
@@ -23,7 +23,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Card Tables
+                {whom + " "}Table
               </h3>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Project
+                  Name
                 </th>
                 <th
                   className={
@@ -51,7 +51,27 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Budget
+                  Email
+                </th>
+                <th
+                  className={
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
+                >
+                  College
+                </th>
+                <th
+                  className={
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
+                >
+                  Department
                 </th>
                 <th
                   className={
@@ -63,7 +83,7 @@ export default function CardTable({ color }) {
                 >
                   Status
                 </th>
-                <th
+                {/* <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
                     (color === "light"
@@ -72,8 +92,8 @@ export default function CardTable({ color }) {
                   }
                 >
                   Users
-                </th>
-                <th
+                </th> */}
+                {/* <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
                     (color === "light"
@@ -81,8 +101,8 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Completion
-                </th>
+                  Action
+                </th> */}
                 <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
@@ -117,6 +137,12 @@ export default function CardTable({ color }) {
                   <i className="fas fa-circle text-orange-500 mr-2"></i> pending
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  $2,500 USD
+                </td>
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <i className="fas fa-circle text-orange-500 mr-2"></i> pending
+                </td>
+                {/* <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <div className="flex">
                     <img
                       src={require("assets/img/team-1-800x800.jpg").default}
@@ -139,8 +165,8 @@ export default function CardTable({ color }) {
                       className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
                     ></img>
                   </div>
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                </td> */}
+                {/* <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <div className="flex items-center">
                     <span className="mr-2">60%</span>
                     <div className="relative w-full">
@@ -152,12 +178,12 @@ export default function CardTable({ color }) {
                       </div>
                     </div>
                   </div>
-                </td>
+                </td> */}
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
                   <TableDropdown />
                 </td>
               </tr>
-              <tr>
+              {/* <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
                   <img
                     src={require("assets/img/angular.jpg").default}
@@ -411,7 +437,7 @@ export default function CardTable({ color }) {
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
                   <TableDropdown />
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
